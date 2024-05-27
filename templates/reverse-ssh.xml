@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Reverse SSH (Auto SSH)</Name>
+  <Repository>jnovack/autossh</Repository>
+  <Registry>https://hub.docker.com/r/jnovack/autossh/</Registry>
+  <Network>br0</Network>
+  <MyIP>0.0.0.0</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <Description/>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/.ssh/id_rsa</HostDir>
+      <ContainerDir>/id_rsa</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>0.0.0.0</Value>
+      <Name>SSH_REMOTE_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>443</Value>
+      <Name>SSH_TUNNEL_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0.0.0.0</Value>
+      <Name>SSH_TARGET_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>4443</Value>
+      <Name>SSH_TARGET_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-R</Value>
+      <Name>SSH_MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>*</Value>
+      <Name>SSH_BIND_IP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>22 -gN -o LogLevel=DEBUG</Value>
+      <Name>SSH_REMOTE_PORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="SSH_REMOTE_HOST" Target="SSH_REMOTE_HOST" Default="" Mode="" Description="Remote Host IP" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="SSH_TUNNEL_PORT" Target="SSH_TUNNEL_PORT" Default="" Mode="" Description="Remote Port" Type="Variable" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="SSH_TARGET_HOST" Target="SSH_TARGET_HOST" Default="" Mode="" Description="Local IP" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="SSH_TARGET_PORT" Target="SSH_TARGET_PORT" Default="" Mode="" Description="Local Port" Type="Variable" Display="always" Required="false" Mask="false">4443</Config>
+  <Config Name="SSH-KEY" Target="/id_rsa" Default="" Mode="rw" Description="Path To SSH Key (id_rsa)" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/.ssh/id_rsa</Config>
+  <Config Name="SSH_MODE" Target="SSH_MODE" Default="" Mode="" Description="SSH Mode (Should be -R)" Type="Variable" Display="always" Required="false" Mask="false">-R</Config>
+  <Config Name="SSH_BIND_IP" Target="SSH_BIND_IP" Default="" Mode="" Description="SSH BIND IP (Should be *)" Type="Variable" Display="always" Required="false" Mask="false">*</Config>
+  <Config Name="SSH_REMOTE_PORT" Target="SSH_REMOTE_PORT" Default="" Mode="" Description="Remote Host Port (Should be 22 -gN -o LogLevel=DEBUG)" Type="Variable" Display="always" Required="false" Mask="false">22 -gN -o LogLevel=DEBUG</Config>
+</Container>
