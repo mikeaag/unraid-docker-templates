@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Reverse SSH (Auto SSH)</Name>
+  <Name>Reverse SSH</Name>
   <Repository>jnovack/autossh</Repository>
   <Registry>https://hub.docker.com/r/jnovack/autossh/</Registry>
   <Network>br0</Network>
